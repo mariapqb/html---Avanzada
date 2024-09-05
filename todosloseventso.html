@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script> 
+    <script type="text/javascript">
+
+      window.tailwind.config = {
+        darkMode: ['class'],
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))'
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))'
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))'
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))'
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))'
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))'
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))'
+              },
+            },
+          }
+        }
+      }
+    </script>
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+      }
+      .dark {
+        --background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+      }
+    }
+  </style>
+    
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <script>
+      // Función para alternar el modo oscuro
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+        // Opcional: guardar la preferencia en localStorage
+        const darkMode = document.body.classList.contains('dark');
+        localStorage.setItem('dark-mode', darkMode);
+      }
+      // Cargar la preferencia al iniciar
+      document.addEventListener('DOMContentLoaded', () => {
+        const darkMode = localStorage.getItem('dark-mode') === 'true';
+        if (darkMode) {
+          document.body.classList.add('dark');
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button onclick="toggleDarkMode()"> </button>
+    <div class="bg-background ">
+    <header class="bg-gray-700 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Ticket Prestige</h1>
+        <nav>
+        <ul class="flex  space-x-4">
+            <div class="flex items-center space-x-2">
+            <div class="relative flex-grow">
+                <input
+                type="text"
+                placeholder="Buscar Eventos, Escenarios o Artistas"
+                class="border border-border rounded-lg py-2 px-4 w-full focus:outline-none focus:ring focus:ring-ring"
+                />
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                </span>
+            </div>
+            <li><a href="#" class="text-white">Ticket Pass</a></li>
+            <li><a href="#" class="text-white">Ingresar</a></li>
+            <li><a href="#" class="text-white">Pásala</a></li>
+            <li><a href="#" class="text-white">Ingresar</a></li>
+            <button onclick="toggleDarkMode()"> Dark Mode</button>
+    </ul>
+        </nav>
+    </header>
+
+        <div class="bg-background p-4">
+          <div class="flex items-center space-x-4">
+            <div class="relative flex-grow">
+              <input
+                type="text"
+                placeholder="Buscar Eventos, Escenarios o Artistas"
+                class="border border-border rounded-lg py-2 px-4 w-full focus:outline-none focus:ring focus:ring-ring"
+              />
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              </span>
+            </div>
+        <select class="border border-border rounded-lg py-2 px-8 focus:outline-none focus:ring focus:ring-ring">
+          <option>Categorías</option>
+          <option>Opción 1</option>
+          <option>Opción 2</option>
+        </select>
+        
+        <select class="border border-border rounded-lg py-2 px-15 focus:outline-none focus:ring focus:ring-ring">
+          <option>Todas las ciudades</option>
+          <option>Armenia</option>
+          <option>Bogota</option>
+          <option>Cali</option>
+        </select>
+        
+        <select class="border border-border rounded-lg py-2 px-8 focus:outline-none focus:ring focus:ring-ring">
+          <option>Seleccione fecha</option>
+          <option>Fecha 1</option>
+          <option>Fecha 2</option>
+        </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="p-4">
+        <h3 class="text-2xl font-bold mb-4">Todos los eventos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-card p-4 rounded-lg shadow">
+            <img src="imagenes\asi fue.jpg" alt="Así Fue" class="w-full h-auto rounded" />
+            <h4 class="font-bold mt-2">ASÍ FUE | UNA NOVELA MUSICAL</h4>
+            <p>Jueves 15 y Sábado 17 de agosto, 8 P.M.</p>
+            <span class="bg-green-500 text-white p-1 rounded">Disponible</span>
+          </div>
+          <a href="eventoFranco.html">
+          <div class="bg-card p-4 rounded-lg shadow">
+          <img src="imagenes\franco.png" alt="Franco Bonilla" class="w-full h-auto rounded" />
+        <h4 class="font-bold mt-2">FRANCO BONILLA | FRANCAMENTE FRANCO</h4>
+        <p>15 de agosto, Movistar Arena</p>
+          <span class="bg-green-500 text-white p-1 rounded">Disponible</span>
+        </div>
+        </a>
+          
+          <div class="bg-card p-4 rounded-lg shadow">
+            <a href="">
+              <img src="imagenes\san.jpg" alt="Santa Fe vs Cali" class="w-full h-auto rounded" />
+              <h4 class="font-bold mt-2">SANTA FE VS CALI FEMENINO | LIGA FE...</h4>
+              <p>Viernes 16 de agosto, 7:30 P.M.</p>
+              <span class="bg-green-500 text-white p-1 rounded">Disponible</span>
+            </a>
+          </div>
+          <div class="bg-card p-4 rounded-lg shadow">
+            <img src="imagenes\marte.jpg" alt="Andrés López" class="w-full h-auto rounded" />
+            <h4 class="font-bold mt-2">ANDRÉS LÓPEZ - LLEGAR A MARTE 2024</h4>
+            <p>Bogotá, funciones agosto - septiembre</p>
+            <span class="bg-green-500 text-white p-1 rounded">Disponible</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-4">Recomendados</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-card rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes\teatro.jpg" alt="Teatro Cafam" class="w-full h-32 object-cover" />
+                <div class="p-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Disponible</span>
+                    <h3 class="text-lg font-semibold mt-2">CARTELERA CAFAM</h3>
+                    <a href="#" class="mt-2 inline-block bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-2 rounded">Ver Cartelera</a>
+                </div>
+            </div>
+            <div class="bg-card rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes\colsub.webp" alt="Teatro Colsubsidio" class="w-full h-32 object-cover" />
+                <div class="p-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Disponible</span>
+                    <h3 class="text-lg font-semibold mt-2">CARTELERA COLSUBSIDIO</h3>
+                    <a href="#" class="mt-2 inline-block bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-2 rounded">Ver Cartelera</a>
+                </div>
+            </div>
+            <div class="bg-card rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes\adosvelas.jpg" alt="Grupo Altavista" class="w-full h-32 object-cover" />
+                <div class="p-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Disponible</span>
+                    <h3 class="text-lg font-semibold mt-2">CARTELERA GRUPO ALTAVISTA</h3>
+                    <a href="#" class="mt-2 inline-block bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-2 rounded">Ver Cartelera</a>
+                </div>
+            </div>
+            <div class="bg-card rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes\idarte.jpg" alt="Cartelera Idartes" class="w-full h-32 object-cover" />
+                <div class="p-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Disponible</span>
+                    <h3 class="text-lg font-semibold mt-2">CARTELERA IDARTES</h3>
+                    <a href="#" class="mt-2 inline-block bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-2 rounded">Ver Cartelera</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <button type="submit" class="w-full bg-accent text-accent-foreground p-4 rounded-lg hover:bg-accent/80  bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">Cargar mas eventos</button>
+        </div>
+
+        </div>
+        </div>
+    </div>
+      
+    <footer class="bg-gray-700 text-white p-6">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between">
+        <div class="mb-4">
+            <h2 class="font-bold">Ticket prestige</h2>
+            <p>Contact Center</p>
+            <p>telefono </p>
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold">Ayuda:</h3>
+            <ul>
+                <li>Contáctanos - PQRS</li>
+                <li>Puntos de venta</li>
+                <li>Preguntas frecuentes</li>
+                <li>Ventas a Grupos</li>
+                <li>Tu Cuenta</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold">Legal:</h3>
+            <ul>
+                <li>Asistencia </li>
+                <li>Política de privacidad</li>
+                <li>Términos de uso</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold">Síguenos en:</h3>
+            <div class="flex space-x-4">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="YouTube">▶️</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Facebook">📘</a>
+            </div>
+        </div>
+    </div>
+    <hr class="my-4 border-zinc-300" />
+    <p class="text-center text-sm">© 2024 ®. All rights reserved. Version 11.23.v01.S324.</p>
+</footer>
+</html>

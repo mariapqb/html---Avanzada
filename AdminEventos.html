@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script> 
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ['class'],
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))'
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))'
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))'
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))'
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))'
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))'
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))'
+              },
+            },
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-background">
+    <div class="relative min-h-screen flex">
+      <!-- Panel lateral -->
+      <aside class="fixed inset-y-0 left-0 bg-gray-700 text-white w-64 transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+        <div class="p-4">
+          <h1 class="text-xl font-bold mb-6">Ticket Prestige</h1>
+          <nav>
+            <ul class="space-y-4">
+              <li><a href="#" class="block text-white hover:bg-gray-800 p-2 rounded">Cuenta</a></li>
+              <li><a href="#" class="block text-white hover:bg-gray-800 p-2 rounded">Gestro de eventos</a></li>
+              <li><a href="#" class="block text-white hover:bg-gray-800 p-2 rounded">Gestor de Cuentas</a></li>
+            </ul>
+          </nav>
+          <button onclick="toggleDarkMode()" class="mt-4 block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded shadow">Dark Mode</button>
+        </div>
+      </aside>
+
+      <!-- Contenido principal -->
+      <div class="flex-1 p-6 md:ml-64">
+        <button class="md:hidden bg-blue-500 text-white p-2 rounded mb-4" onclick="toggleSidebar()">☰</button>
+        <div class="max-w-md mx-auto bg-card rounded-lg shadow-md p-6">
+                <title>Gestión de Eventos</title>
+                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+            </head>
+            <body class="bg-gray-100 p-5">
+                <div class="container mx-auto">
+                    <h1 class="text-2xl font-bold mb-4">Gestión de Eventos</h1>
+                    <div class="mb-4">
+                        <button class="bg-green-500 text-white px-4 py-2 rounded">Agregar Evento</button>
+                    </div>
+                <input
+                type="text"
+                placeholder="Buscar Eventos, Escenarios o Artistas"
+                class="border border-border rounded-lg py-2 px-4 w-full focus:outline-none focus:ring focus:ring-ring" />
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            </span>
+                    <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Nombre del Evento</th>
+                                <th class="py-3 px-6 text-left">Fecha del Evento</th>
+                                <th class="py-3 px-6 text-left">Nombre del Creador</th>
+                                <th class="py-3 px-6 text-left">Localidad</th>
+                                <th class="py-3 px-6 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600 text-sm">
+                            <!-- Ejemplo de una fila en la tabla -->
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-left whitespace-nowrap">Concierto de Rock</td>
+                                <td class="py-3 px-6 text-left">15/09/2024</td>
+                                <td class="py-3 px-6 text-left">Juan Pérez</td>
+                                <td class="py-3 px-6 text-left">Bogotá</td>
+                                <td class="py-3 px-6 text-center">
+                                    <button class="bg-blue-500 text-white px-3 py-1 rounded mx-1">Modificar</button>
+                                    <button class="bg-red-500 text-white px-3 py-1 rounded mx-1">Borrar</button>
+                                </td>
+                            </tr>
+                            <!-- Más filas aquí -->
+                        </tbody>
+                    </table>
+                </div>
+
+
+            
+            
+  
+          </form>
+        </div>
+      </div>
+       
+    </div>
+    
+    <script>
+      // Función para alternar el modo oscuro
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+        const darkMode = document.body.classList.contains('dark');
+        localStorage.setItem('dark-mode', darkMode);
+      }
+
+      // Función para alternar la visibilidad del panel lateral
+      function toggleSidebar() {
+        const sidebar = document.querySelector('aside');
+        sidebar.classList.toggle('-translate-x-full');
+      }
+
+      // Cargar la preferencia al iniciar
+      document.addEventListener('DOMContentLoaded', () => {
+        const darkMode = localStorage.getItem('dark-mode') === 'true';
+        if (darkMode) {
+          document.body.classList.add('dark');
+        }
+      });
+    </script>
+  </body>
+
+  
+
+</html>
